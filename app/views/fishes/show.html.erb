@@ -1,0 +1,8 @@
+<div class="container">
+  <p id="notice">
+    <%= notice %>
+  </p>
+  <h3> Fish name: <%= @fish.name %> </h3>
+  <h3> Description: <%= @fish.description %> </h3>
+  <%= link_to 'Edit', edit_fish_path(@fish) %> 
+</div>

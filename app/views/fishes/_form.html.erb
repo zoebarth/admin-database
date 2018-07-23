@@ -1,0 +1,5 @@
+<%= simple_form_for(@fish, html: { class: "form-group" }) do |f| %>
+  <%= f.input :name %>
+  <%= f.input :description, as: :text %>
+  <%= f.button :submit%>
+<% end %>
