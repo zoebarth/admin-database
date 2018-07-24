@@ -7,11 +7,26 @@
     <h4> <%= link_to "Create new fish", new_fish_path %> </h4>
   </div>
 
-
-  <% @fishes.each do |fish| %>
-    <div class="row justify-content-center">
-      <p> <%= link_to fish.name, fish_path(fish)%> </p>
-    </div>
-  <% end %>
-
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+        <th>Image</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @fishes.each do |fish| %>
+      <tr>
+        <td>  <%= link_to fish.name, fish_path(fish)%> </td>
+        <td> <%= fish.description.truncate(100) %> </td>
+        <td>
+          <% if fish.fish_image.attached? %>
+             <%= image_tag fish.fish_image.variant(resize: "100x100") %> 
+          <% end%>   
+        </td>
+      </tr>
+      <% end %>
+    </tbody>
+  </table>
 </div>
