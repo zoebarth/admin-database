@@ -1,0 +1,7 @@
+<%= simple_form_for(@body, html: { class: 'form-group' }) do |form| %>
+  <%= form.input :name, label: 'Name of Body of Water', class: "form-control" %>
+  <%= form.input :latitude, class: "form-control" %>
+  <%= form.input :longitude, class: "form-control" %>
+  <%= form.input :description, as: :text, class: "form-control" %>
+  <%= form.button :submit, class: "btn btn-primary" %>
+<% end %>
