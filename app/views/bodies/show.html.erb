@@ -1,0 +1,17 @@
+<div class="container">
+  <p id="notice"><%= notice %></p>
+
+  <h1><%= @body.name %></h1>
+
+  <h5> Latitude: </h5>
+  <p>  <%= @body.latitude %> </p>
+
+  <h5> Longitude:</h5>
+  <p>  <%= @body.longitude %> </p>
+
+  <h5> Description: </h5>
+  <p> <%= @body.description %></p> 
+
+
+  <%= link_to 'Edit', edit_body_path(@body) %> | <%= link_to 'Back', bodies_path %> 
+</div>
