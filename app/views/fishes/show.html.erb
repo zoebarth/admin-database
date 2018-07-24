@@ -1,0 +1,13 @@
+<div class="container">
+  <p id="notice">
+    <%= notice %>
+  </p>
+  <h3> Fish name: <%= @fish.name %> </h3>
+  <h3> Description: <%= @fish.description %> </h3>
+  <% if @fish.fish_image.attached? %>
+    <%= image_tag @fish.fish_image.variant(resize: "400x400") %>
+  <% end%>
+  <br>
+  <%= link_to 'Edit', edit_fish_path(@fish) %> |
+  <%= link_to 'Back', fishes_path %>
+</div>

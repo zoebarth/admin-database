@@ -1,0 +1,6 @@
+<%= simple_form_for(@fish, html: { class: "form-group" }) do |f| %>
+  <%= f.input :name, class: "form-control"%>
+  <%= f.input :description, as: :text, class: "form-control" %>
+  <%= f.input :fish_image %>
+  <%= f.button :submit, class: "btn btn-primary"%>
+<% end %>
