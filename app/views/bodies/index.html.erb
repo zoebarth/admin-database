@@ -7,10 +7,22 @@
     <h4> <%= link_to "Create New Body of Water", new_body_path %> </h4>
   </div>
 
-
-  <% @bodies.each do |body| %>
-    <div class="row justify-content-center">
-      <p> <%= link_to body.name, body_path(body)%> </p>
-    </div>
-  <% end %> 
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Latitude, Longitude</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @bodies.each do |body| %>
+      <tr>
+        <td> <%= link_to body.name, body_path(body)%> </td>
+        <td> <%= body.latitude%>, <%= body.longitude%> </td>
+        <td> <%= body.description.truncate(100) %> </td>
+      </tr>
+      <% end %>
+    </tbody>
+  </table>
 </div>

@@ -16,6 +16,19 @@ class BodiesController < ApplicationController
     end
   end
 
+  def edit
+    set_body
+  end
+
+  def update
+    set_body
+    if @body.update(body_params)
+        redirect_to body_path(@body), notice: "Body of water was successfully updated."
+    else
+      render :edit
+    end
+  end
+
   def show
     set_body
   end

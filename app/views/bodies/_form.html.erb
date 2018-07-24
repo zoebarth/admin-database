@@ -1,7 +1,7 @@
 <%= simple_form_for(@body, html: { class: 'form-group' }) do |form| %>
-  <%= form.input :name, label: 'Name of Body of Water', error: 'Name is mandatory', class: "form-control" %>
-  <%= form.input :latitude, label: 'Latitude', error: 'Latitude is mandatory', class: "form-control" %>
-  <%= form.input :longitude, label: 'Longitude', error: 'Longitude is mandatory', class: "form-control" %>
-  <%= form.input :description, label: 'Description', class: "form-control" %>
-  <%= form.button :submit %>
+  <%= form.input :name, label: 'Name of Body of Water', class: "form-control" %>
+  <%= form.input :latitude, class: "form-control" %>
+  <%= form.input :longitude, class: "form-control" %>
+  <%= form.input :description, as: :text, class: "form-control" %>
+  <%= form.button :submit, class: "btn btn-primary" %>
 <% end %>
