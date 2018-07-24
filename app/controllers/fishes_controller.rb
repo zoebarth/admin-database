@@ -39,6 +39,7 @@ class FishesController < ApplicationController
   end
 
   def fish_params
-    params.fetch(:fish, {}).permit(:name, :description, :fish_image)
+    params.fetch(:fish, {}).permit(:name, :description, :fish_image, population_ids:[], 
+    populations_attributes:[:body_id, :amount, :_destroy, :id])
   end
 end
