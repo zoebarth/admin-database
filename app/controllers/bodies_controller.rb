@@ -1,4 +1,6 @@
 class BodiesController < ApplicationController
+  
+
   def index
     @bodies = Body.order(:name)
   end
