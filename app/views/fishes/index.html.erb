@@ -12,14 +12,16 @@
       <tr>
         <th>Name</th>
         <th>Description</th>
+        <th>Found at</th>
         <th>Image</th>
       </tr>
     </thead>
     <tbody>
       <% @fishes.each do |fish| %>
       <tr>
-        <td>  <%= link_to fish.name, fish_path(fish)%> </td>
-        <td> <%= fish.description.truncate(100) %> </td>
+        <td width="25%">  <%= link_to fish.name, fish_path(fish)%> </td>
+        <td width="40%"> <%= fish.description.truncate(100) %> </td>
+        <td> <%= fish.populations.count %> locations </td>
         <td>
           <% if fish.fish_image.attached? %>
              <%= image_tag fish.fish_image.variant(resize: "100x100") %> 
