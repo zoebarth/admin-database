@@ -15,7 +15,10 @@ gem 'sass-rails', '~> 5.0'
 gem 'uglifier', '>= 1.3.0'
 # See https://github.com/rails/execjs#readme for more supported runtimes
 # gem 'mini_racer', platforms: :ruby
+<<<<< HEAD
 
+=======
+>>>>>>> bc3fa811f3bd3191e75630eae4c9bce844e7d75f
 # Use CoffeeScript for .coffee assets and views
 gem 'coffee-rails', '~> 4.2'
 # Turbolinks makes navigating your web application faster. Read more: https://github.com/turbolinks/turbolinks
@@ -39,7 +42,11 @@ gem 'bootstrap', '~> 4.1.1'
 gem 'jquery-rails'
 gem 'simple_form'
 gem 'image_processing', '~> 1.2'
+<<<<<<< HEAD
 gem 'devise'
+=======
+gem 'cocoon'
+>>>>>>> bc3fa811f3bd3191e75630eae4c9bce844e7d75f
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console

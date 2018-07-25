@@ -2,5 +2,25 @@
   <%= f.input :name, class: "form-control"%>
   <%= f.input :description, as: :text, class: "form-control" %>
   <%= f.input :fish_image %>
+  <label> Populations</label>
+  <table class="table">
+    <thead>
+      <tr>
+        <th>Body of water</th>
+        <th>Population</th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+      <%= f.simple_fields_for :populations do |builder| %>
+        <%= render 'population_fields', f: builder %>
+      <% end%>
+    </tbody>
+  </table>
+
+  <div class="form-actions">
+    <%= link_to_add_association 'Add Body of Water', f, :populations %>
+  </div>
+
   <%= f.button :submit, class: "btn btn-primary"%>
 <% end %>

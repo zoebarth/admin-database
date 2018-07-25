@@ -41,7 +41,7 @@ class BodiesController < ApplicationController
   end
 
   def body_params
-    params.fetch(:body, {}).permit(:name, :latitude, :longitude, :description)
+    params.fetch(:body, {}).permit(:name, :latitude, :longitude, :description, population_ids:[])
   end
 
 end
