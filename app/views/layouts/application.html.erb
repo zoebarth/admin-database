@@ -18,7 +18,7 @@
 
   <body class="index_page">
     <div class="container">
-      <% if !(request.env['PATH_INFO'] == '/admins/sign_in') %>
+      <% if !(request.env['PATH_INFO'] == '/admins/sign_in' || request.env['PATH_INFO'] == '/admins/password/new' || request.env['PATH_INFO'] == '/admins/password' || request.env['PATH_INFO'] == '/admins/password/edit') %>
         <nav class="navbar navbar-expand-lg navbar-light" style="background-color: #e3f2fd;">
           <a class="navbar-brand" href="/"> Nevada Admin Pages</a>
           <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
