@@ -9,16 +9,43 @@
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
+
   <div class="row justify-content-center">
     <p class="notice"><%= notice %></p>
     <p class="alert"><%= alert %></p>
-    <% if admin_signed_in? %>
-      <%= link_to "Log out", destroy_admin_session_path, :method => :delete %>
-    <% end %>
+
   </div>
 
-  <body>
-    <%= yield %>
+  <body class="index_page">
+    <div class="container">
+      <% if !(request.env['PATH_INFO'] == '/admins/sign_in') %>
+        <nav class="navbar navbar-expand-lg navbar-light" style="background-color: #e3f2fd;">
+          <a class="navbar-brand" href="/"> Nevada Admin Pages</a>
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+              <li class="nav-item">
+                <%= link_to ' Bodies of Water  ', bodies_path, class: "nav-item nav-link" %>
+              </li>
+              <li class="nav-item">
+                <%= link_to ' Fish  ', fishes_path, class: "nav-item nav-link" %>
+              </li>
+            </ul>
+            <form class="form-inline my-2 my-lg-0">
+              <ul class="form-control mr-sm-2" style="margin: 1px">
+                <% if admin_signed_in? %>
+                  <%= link_to "Log out", destroy_admin_session_path, :method => :delete, class: "nav-item nav-link"%>
+                <% end %>
+            </form>
+          </div>
+        </nav>
+      <% end %>
+      <%= yield %>
+    </div>
   </body>
 
 </html>
+
