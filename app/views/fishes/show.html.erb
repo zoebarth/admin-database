@@ -2,12 +2,23 @@
   <p id="notice">
     <%= notice %>
   </p>
-  <h3> Fish name: <%= @fish.name %> </h3>
-  <h3> Description: <%= @fish.description %> </h3>
+  <h1> <%= @fish.name %> </h1>
+
+  <h5> Description: </h5>
+  <p> <%= @fish.description %> </p>
   <% if @fish.fish_image.attached? %>
     <%= image_tag @fish.fish_image.variant(resize: "400x400") %>
   <% end%>
   <br>
+
+  <h5> Populations: </h5>
+  <% if (@fish.populations.count > 0) %>
+    <% @fish.populations.each do |population| %>
+      <p> <%= population.body.name %>: <%= population.amount %></p>
+    <% end %>
+  <% else %>
+    <p> None found </p>
+  <% end %>
   <%= link_to 'Edit', edit_fish_path(@fish) %> |
   <%= link_to 'Back', fishes_path %>
 </div>

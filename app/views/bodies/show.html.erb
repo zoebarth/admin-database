@@ -12,6 +12,15 @@
   <h5> Description: </h5>
   <p> <%= @body.description %></p> 
 
+  <h5> Fish found here: </h5>
+  <% if (@body.populations.count > 0) %>
+    <% @body.populations.each do |population| %>
+      <p> <%= population.fish.name %>: <%= population.amount %></p>
+    <% end %>
+  <% else %>
+    <p> None found </p>
+  <% end %>
+
 
   <%= link_to 'Edit', edit_body_path(@body) %> | <%= link_to 'Back', bodies_path %> 
 </div>
