@@ -13,6 +13,7 @@
         <th>Name</th>
         <th>Latitude, Longitude</th>
         <th>Description</th>
+        <th>Fish Species Present </th>
       </tr>
     </thead>
     <tbody>
@@ -21,6 +22,7 @@
         <td> <%= link_to body.name, body_path(body)%> </td>
         <td> <%= body.latitude%>, <%= body.longitude%> </td>
         <td> <%= body.description.truncate(100) %> </td>
+        <td> <%= body.populations.count %> species</td>
       </tr>
       <% end %>
     </tbody>
