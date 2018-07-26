@@ -1,9 +1,8 @@
 Rails.application.routes.draw do
-  devise_for :admins, :controllers => {:confirmations => 'confirmations'}
+  devise_for :admins, :skip => [:registrations] 
 
   devise_scope :admin do 
     get '/admins/sign_out' => 'devise/sessions#destroy'
-    patch "/confirm" => "confirmations#confirm"
   end
 
   resources :admins, only: [:index]
