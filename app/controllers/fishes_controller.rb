@@ -1,6 +1,4 @@
 class FishesController < ApplicationController
-  before_action :authenticate_admin!
-  
   def index
     @fishes = Fish.order(:name)
   end

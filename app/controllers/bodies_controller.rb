@@ -1,6 +1,4 @@
 class BodiesController < ApplicationController
-  before_action :authenticate_admin!
-
   def index
     @bodies = Body.order(:name)
   end
