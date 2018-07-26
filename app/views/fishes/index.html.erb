@@ -21,11 +21,7 @@
       <tr>
         <td width="25%">  <%= link_to fish.name, fish_path(fish)%> </td>
         <td width="40%"> <%= fish.description.truncate(100) %> </td>
-        <% if fish.populations.count == 1 %>
-         <td> 1 location </td>
-       <% else %>
-         <td> <%= fish.populations.count %> locations </td>
-       <% end%>
+        <td> <%= pluralize(fish.populations.size, 'location') %> </td>
         <td>
           <% if fish.fish_image.attached? %>
              <%= image_tag fish.fish_image.variant(resize: "100x100") %> 
