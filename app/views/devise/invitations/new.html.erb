@@ -4,8 +4,8 @@
 
 <div class="row justify-content-center">
   <%= simple_form_for resource, as: resource_name, url: invitation_path(resource_name), html: { method: :post} do |f| %>
-    <%= f.input :first_name, required: true %>
-    <%= f.input :last_name, required: true%>
+    <%= f.input :first_name %>
+    <%= f.input :last_name %>
     <% resource.class.invite_key_fields.each do |field| -%>
       <%= f.input field %>
     <% end -%>
