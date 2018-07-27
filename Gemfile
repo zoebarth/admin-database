@@ -42,6 +42,7 @@ gem 'bootstrap', '~> 4.1.1'
 gem 'simple_form'
 gem 'image_processing', '~> 1.2'
 gem 'devise'
+gem 'devise_invitable', '~> 1.7.0'
 gem 'cocoon'
 
 group :development, :test do
