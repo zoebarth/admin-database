@@ -1,9 +1,8 @@
 <%= simple_form_for(@fish, html: { class: "form-group" }) do |f| %>
   <%= f.input :name, class: "form-control"%>
   <%= f.input :description, as: :text, class: "form-control" %>
-  <%= f.input :fish_image %>
   <label> Populations</label>
-  <table class="table">
+  <table class="table ">
     <thead>
       <tr>
         <th>Body of water</th>
@@ -18,9 +17,15 @@
     </tbody>
   </table>
 
-  <div class="form-actions">
+  <div class="form-actions" style="margin-bottom: 25px">
     <%= link_to_add_association 'Add Body of Water', f, :populations %>
   </div>
 
-  <%= f.button :submit, class: "btn btn-primary "%>
+  <%= f.input :fish_image %>
+
+
+  <%= f.button :submit, class: "btn btn-primary btn-block"%>
+  <div style= "margin-top: 10px">
+    <%= link_to 'Cancel', fishes_path %>
+  </div>
 <% end %>
