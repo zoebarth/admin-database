@@ -19,6 +19,8 @@
   <% else %>
     <p> None found </p>
   <% end %>
-  <%= link_to 'Edit', edit_fish_path(@fish) %> |
-  <%= link_to 'List of Fish', fishes_path %>
+
+  <a class = 'btn btn-secondary btn-sm mr-1' href="<%=edit_fish_path(@fish)%>" role=“button”> Edit </a>
+  <a class = 'btn btn-secondary btn-sm mr-1' href="<%=fishes_path%>" role=“button”> Back to List </a>
+
 </div>

@@ -21,7 +21,6 @@
     <p> None found </p>
   <% end %>
 
-
-  <%= link_to 'Edit', edit_body_path(@body) %> | 
-  <%= link_to 'Bodies of Water List', bodies_path %> 
+  <a class = 'btn btn-secondary btn-sm mr-1' href="<%=edit_body_path(@body)%>" role=“button”> Edit </a>
+  <a class = 'btn btn-secondary btn-sm mr-1' href="<%=bodies_path%>" role=“button”> Back to List </a>
 </div>
