@@ -13,7 +13,7 @@ class ApplicationController < ActionController::Base
   private
 
   def layout_by_resource
-    if devise_controller?
+    if devise_controller? && request.env['PATH_INFO'] != '/admins/invitation/new'
       "authentication_layout"
     else
       "application"
