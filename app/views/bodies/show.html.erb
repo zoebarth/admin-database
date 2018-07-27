@@ -12,7 +12,7 @@
   <h5> Description: </h5>
   <p> <%= @body.description %></p> 
 
-  <h5> Fish found here: </h5>
+  <h5> Fish populations found here: </h5>
   <% if (@body.populations.count > 0) %>
     <% @body.populations.each do |population| %>
       <p> <%= link_to population.fish.name, fish_path(population.fish) %>: <%= population.amount %></p>
