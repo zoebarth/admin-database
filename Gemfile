@@ -44,6 +44,7 @@ gem 'image_processing', '~> 1.2'
 gem 'devise'
 gem 'devise_invitable', '~> 1.7.0'
 gem 'cocoon'
+gem 'file_validators'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
