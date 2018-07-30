@@ -1,4 +1,4 @@
-<div class="container">
+<div class="container margin-bottom--30">
   <p id="notice">
     <%= notice %>
   </p>
@@ -13,12 +13,14 @@
 
   <h5> Populations: </h5>
   <% if (@fish.populations.count > 0) %>
-    <% @fish.populations.each do |population| %>
+    <% @fish.populations.sort_by {|p| p.body.name}.each do |population| %>
       <p> <%= link_to population.body.name, body_path(population.body) %>: <%= population.amount %></p>
     <% end %>
   <% else %>
     <p> None found </p>
   <% end %>
-  <%= link_to 'Edit', edit_fish_path(@fish) %> |
-  <%= link_to 'List of Fish', fishes_path %>
+
+  <a class = 'btn btn-secondary btn-sm mr-1' href="<%=edit_fish_path(@fish)%>" role=“button”> Edit </a>
+  <a class = 'btn btn-secondary btn-sm mr-1' href="<%=fishes_path%>" role=“button”> Back to List </a>
+
 </div>
