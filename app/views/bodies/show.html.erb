@@ -14,7 +14,7 @@
 
   <h5> Fish populations found here: </h5>
   <% if (@body.populations.count > 0) %>
-    <% @body.populations.each do |population| %>
+    <% @body.populations.sort_by {|p| p.fish.name}.each do |population| %>
       <p> <%= link_to population.fish.name, fish_path(population.fish) %>: <%= population.amount %></p>
     <% end %>
   <% else %>

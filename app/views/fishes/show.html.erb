@@ -13,7 +13,7 @@
 
   <h5> Populations: </h5>
   <% if (@fish.populations.count > 0) %>
-    <% @fish.populations.each do |population| %>
+    <% @fish.populations.sort_by {|p| p.body.name}.each do |population| %>
       <p> <%= link_to population.body.name, body_path(population.body) %>: <%= population.amount %></p>
     <% end %>
   <% else %>
