@@ -5,7 +5,8 @@ class Fish < ApplicationRecord
   validates :name, presence: true, length: {maximum: 255}
   validates :description, length: {maximum: 1000}, allow_blank: true
   validates :fish_image, file_size: { less_than_or_equal_to: 10.megabytes },
-            file_content_type: { allow: ['image/jpeg', 'image/png', 'image/jpg'] } 
+            file_content_type: { allow: ['image/jpeg', 'image/png', 'image/jpg'] },
+            if: ->() { fish_image.attached? }
   accepts_nested_attributes_for :populations, reject_if: :all_blank, allow_destroy: true
 
 end
